@@ -11,6 +11,7 @@
     --peach:  #f4e3dc;
     --cream:  #f8f3f1;
     --white:  #ffffff;
+    --green:  #81fd6e;
     --ink:    #080b3a;
     --mid:    #1e2252;
     --muted:  #5a5e82;
@@ -27,90 +28,147 @@
     font-weight: 400;
     line-height: 1.8;
     font-size: 18px;
-    border-top: 3px solid var(--navy);
   }
 
-  /* ── HEADER ── */
-  header {
-    background: var(--peach);
-    padding: 5rem 3rem 4.5rem;
+  /* ── TOP BAR ── */
+  .top-bar {
+    background: var(--navy);
+    height: 44px;
+    display: flex;
+    align-items: center;
+    padding: 0 3rem;
+    gap: 1.5rem;
+  }
+
+  .top-bar-brand {
+    font-family: 'Nunito', sans-serif;
+    font-size: 1rem;
+    font-weight: 800;
+    color: var(--green);
+    letter-spacing: -0.02em;
+    flex-shrink: 0;
+  }
+
+  .top-bar-dot {
+    width: 4px; height: 4px;
+    background: var(--green);
+    opacity: 0.5;
+    flex-shrink: 0;
+  }
+
+  .top-bar-sub {
+    font-size: 0.65rem;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: rgba(255,255,255,0.35);
+    font-weight: 600;
+    flex: 1;
+  }
+
+  .top-bar-tag {
+    font-size: 0.6rem;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    color: rgba(255,255,255,0.2);
+    font-weight: 600;
+    text-align: right;
+  }
+
+  /* ── HERO ── */
+  .hero {
+    background: var(--white);
+    padding: 5rem 3rem 0;
     max-width: 960px;
     margin: 0 auto;
   }
 
-  .header-tag {
-    font-size: 0.7rem;
+  .hero-eyebrow {
+    font-size: 0.68rem;
     letter-spacing: 0.28em;
     text-transform: uppercase;
     color: var(--muted);
-    margin-bottom: 2.5rem;
+    margin-bottom: 2rem;
     font-weight: 600;
   }
 
-  .header-title {
+  .hero-title {
     font-family: 'Nunito', 'Corbel', sans-serif;
-    font-size: clamp(4rem, 11vw, 8.5rem);
+    font-size: clamp(4.5rem, 12vw, 9rem);
     font-weight: 800;
-    line-height: 0.88;
-    letter-spacing: -0.03em;
+    line-height: 0.86;
+    letter-spacing: -0.035em;
     color: var(--navy);
   }
 
-  .header-subtitle {
-    font-family: 'Corbel', 'Nunito', sans-serif;
-    font-size: clamp(1rem, 2.5vw, 1.35rem);
+  .hero-green-rule {
+    width: 72px;
+    height: 3px;
+    background: var(--green);
+    margin: 1.75rem 0;
+  }
+
+  .hero-subtitle {
+    font-size: clamp(1rem, 2.2vw, 1.3rem);
     font-weight: 400;
     color: var(--muted);
-    letter-spacing: 0.04em;
-    margin-top: 1.25rem;
+    letter-spacing: 0.03em;
     line-height: 1.5;
+    max-width: 560px;
   }
 
-  .header-rule {
-    width: 40px; height: 2px;
-    background: var(--navy);
-    opacity: 0.25;
-    margin: 2.5rem 0;
+  /* META CARDS */
+  .meta-band {
+    background: var(--white);
+    max-width: 960px;
+    margin: 0 auto;
+    padding: 2.5rem 3rem 0;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+    gap: 1px;
+    background-color: rgba(9,13,94,0.08);
   }
 
-  .header-meta {
-    display: flex; gap: 3rem; flex-wrap: wrap;
+  .meta-card {
+    background: var(--white);
+    padding: 1.5rem 1.25rem;
   }
 
-  .meta-item {
-    font-size: 0.68rem;
-    letter-spacing: 0.14em;
+  .meta-card-label {
+    font-size: 0.6rem;
+    letter-spacing: 0.2em;
     text-transform: uppercase;
     color: var(--muted);
     font-weight: 600;
-  }
-  .meta-value {
-    display: block;
-    font-size: 1rem;
-    letter-spacing: 0.01em;
-    text-transform: none;
-    color: var(--navy);
-    margin-top: 0.25rem;
-    font-weight: 700;
-    font-family: 'Nunito', sans-serif;
+    margin-bottom: 0.4rem;
   }
 
-  /* ── GLOBAL WRAP ── */
-  .wrap { max-width: 960px; margin: 0 auto; padding: 0 3rem; }
+  .meta-card-value {
+    font-family: 'Nunito', sans-serif;
+    font-size: 0.95rem;
+    font-weight: 700;
+    color: var(--navy);
+    line-height: 1.3;
+  }
+
+  .meta-card-value.green { color: var(--green); }
+
+  /* WHITE-TO-PEACH TRANSITION */
+  .white-section {
+    background: var(--white);
+    max-width: 960px;
+    margin: 0 auto;
+    padding: 0 3rem 3rem;
+  }
 
   /* ── FICHA ── */
   .ficha {
     background: var(--white);
-    margin: 0 3rem 0;
     max-width: 960px;
     margin: 0 auto;
-    padding: 0 3rem;
+    padding: 0 3rem 4rem;
   }
 
-  .ficha-inner {
-    border-top: 1px solid var(--rule);
-    padding: 3rem 0;
-  }
+  .ficha-inner { border-top: 1px solid var(--rule); padding: 3rem 0 0; }
 
   .ficha-label-top {
     font-size: 0.65rem;
@@ -129,19 +187,13 @@
     align-items: baseline;
   }
   .ficha-row:last-child { border-bottom: none; }
+  .fl { font-size: 0.68rem; letter-spacing: 0.14em; text-transform: uppercase; color: var(--muted); font-weight: 600; }
+  .fv { font-size: 0.95rem; color: var(--mid); line-height: 1.55; }
 
-  .fl {
-    font-size: 0.68rem;
-    letter-spacing: 0.14em;
-    text-transform: uppercase;
-    color: var(--muted);
-    font-weight: 600;
-    padding-top: 0.1rem;
-  }
-  .fv {
-    font-size: 0.95rem;
-    color: var(--mid);
-    line-height: 1.55;
+  /* PEACH BAND DIVIDER */
+  .peach-divider {
+    height: 4rem;
+    background: linear-gradient(to bottom, var(--white), var(--peach));
   }
 
   /* ── SECTIONS ── */
@@ -153,6 +205,13 @@
   }
   .section:last-of-type { border-bottom: none; }
 
+  .section-white {
+    background: var(--white);
+    padding: 5rem 3rem;
+    border-bottom: 1px solid var(--rule);
+  }
+  .section-white-inner { max-width: 960px; margin: 0 auto; }
+
   .section-label {
     font-size: 0.63rem;
     letter-spacing: 0.28em;
@@ -161,19 +220,15 @@
     margin-bottom: 1.75rem;
     display: flex;
     align-items: center;
-    gap: 1.2rem;
+    gap: 1rem;
     font-weight: 600;
   }
-  .section-label::after {
-    content: '';
-    flex: 1;
-    height: 1px;
-    background: var(--rule);
-  }
+  .section-label::before { content: ''; display: inline-block; width: 6px; height: 6px; background: var(--green); flex-shrink: 0; }
+  .section-label::after { content: ''; flex: 1; height: 1px; background: var(--rule); }
 
   h2 {
     font-family: 'Nunito', 'Corbel', sans-serif;
-    font-size: clamp(1.7rem, 3.5vw, 2.6rem);
+    font-size: clamp(1.7rem, 3.5vw, 2.5rem);
     font-weight: 800;
     line-height: 1.06;
     letter-spacing: -0.02em;
@@ -189,7 +244,7 @@
     max-width: 760px;
   }
 
-  /* ── BULLETS ── */
+  /* BULLETS */
   .bullets { list-style: none; margin-top: 1.25rem; max-width: 760px; }
   .bullets li {
     font-size: 0.93rem;
@@ -205,12 +260,11 @@
     position: absolute;
     left: 0; top: 1.05rem;
     width: 7px; height: 7px;
-    border: 1.5px solid rgba(9,13,94,0.3);
+    border: 1.5px solid var(--green);
   }
 
-  /* ── TEAM ── */
+  /* TEAM */
   .team-list { margin-top: 2rem; }
-
   .team-item {
     display: grid;
     grid-template-columns: 210px 1fr;
@@ -220,35 +274,12 @@
     align-items: start;
   }
   .team-item:last-child { border-bottom: none; }
+  .team-role { font-size: 0.62rem; letter-spacing: 0.18em; text-transform: uppercase; color: var(--muted); font-weight: 600; margin-bottom: 0.35rem; }
+  .team-name { font-family: 'Nunito', 'Corbel', sans-serif; font-size: 1.1rem; font-weight: 800; color: var(--navy); letter-spacing: -0.01em; line-height: 1.2; }
+  .team-bio { font-size: 0.91rem; line-height: 1.82; color: var(--muted); padding-top: 0.15rem; }
 
-  .team-role {
-    font-size: 0.62rem;
-    letter-spacing: 0.18em;
-    text-transform: uppercase;
-    color: var(--muted);
-    font-weight: 600;
-    margin-bottom: 0.35rem;
-  }
-
-  .team-name {
-    font-family: 'Nunito', 'Corbel', sans-serif;
-    font-size: 1.1rem;
-    font-weight: 800;
-    color: var(--navy);
-    letter-spacing: -0.01em;
-    line-height: 1.2;
-  }
-
-  .team-bio {
-    font-size: 0.91rem;
-    line-height: 1.82;
-    color: var(--muted);
-    padding-top: 0.15rem;
-  }
-
-  /* ── PROGRAMAÇÃO ── */
+  /* PROGRAMAÇÃO */
   .prog-list { margin-top: 2rem; }
-
   .prog-item {
     display: grid;
     grid-template-columns: 210px 1fr;
@@ -256,175 +287,90 @@
     padding: 1.75rem 0;
     border-bottom: 1px solid var(--rule);
     align-items: start;
-    background: transparent;
     transition: background 0.15s;
   }
-  .prog-item:hover { background: rgba(255,255,255,0.5); }
+  .prog-item:hover { background: rgba(129,253,110,0.06); }
   .prog-item:last-child { border-bottom: none; }
+  .prog-title { font-size: 0.9rem; font-weight: 700; color: var(--navy); font-family: 'Nunito', sans-serif; line-height: 1.3; }
+  .prog-text { font-size: 0.91rem; line-height: 1.82; color: var(--muted); }
 
-  .prog-title {
-    font-size: 0.9rem;
-    font-weight: 700;
-    color: var(--navy);
-    font-family: 'Nunito', sans-serif;
-    line-height: 1.3;
-  }
-
-  .prog-text {
-    font-size: 0.91rem;
-    line-height: 1.82;
-    color: var(--muted);
-  }
-
-  /* ── TABLE ── */
-  .spaces-table {
-    width: 100%;
-    border-collapse: collapse;
-    margin-top: 2rem;
-    font-size: 0.91rem;
-  }
-  .spaces-table th {
-    background: var(--navy);
-    color: var(--white);
-    padding: 0.9rem 1.25rem;
-    text-align: left;
-    font-size: 0.65rem;
-    letter-spacing: 0.16em;
-    text-transform: uppercase;
-    font-weight: 600;
-  }
-  .spaces-table td {
-    padding: 0.85rem 1.25rem;
-    border-bottom: 1px solid var(--rule);
-    color: var(--mid);
-    vertical-align: top;
-  }
+  /* TABLE */
+  .spaces-table { width: 100%; border-collapse: collapse; margin-top: 2rem; font-size: 0.91rem; }
+  .spaces-table th { background: var(--navy); color: var(--white); padding: 0.9rem 1.25rem; text-align: left; font-size: 0.65rem; letter-spacing: 0.16em; text-transform: uppercase; font-weight: 600; }
+  .spaces-table th:first-child { border-left: 3px solid var(--green); }
+  .spaces-table td { padding: 0.85rem 1.25rem; border-bottom: 1px solid var(--rule); color: var(--mid); vertical-align: top; }
   .spaces-table tr:nth-child(even) td { background: var(--white); }
-  .spaces-table td:first-child {
-    font-weight: 700;
-    color: var(--navy);
-    width: 240px;
-  }
+  .spaces-table td:first-child { font-weight: 700; color: var(--navy); width: 240px; }
 
-  /* ── STEPS ── */
+  /* STEPS */
   .steps-list { margin-top: 2rem; }
-
-  .step-item {
-    display: grid;
-    grid-template-columns: 56px 1fr;
-    gap: 1.5rem;
-    padding: 1.75rem 0;
-    border-bottom: 1px solid var(--rule);
-    align-items: start;
-  }
+  .step-item { display: grid; grid-template-columns: 56px 1fr; gap: 1.5rem; padding: 1.75rem 0; border-bottom: 1px solid var(--rule); align-items: start; }
   .step-item:last-child { border-bottom: none; }
+  .step-n { font-family: 'Nunito', sans-serif; font-size: 1.6rem; font-weight: 800; color: var(--green); line-height: 1.2; letter-spacing: -0.03em; opacity: 0.75; }
+  .step-title { font-size: 0.9rem; font-weight: 700; color: var(--navy); font-family: 'Nunito', sans-serif; margin-bottom: 0.3rem; }
+  .step-text { font-size: 0.91rem; line-height: 1.8; color: var(--muted); }
 
-  .step-n {
-    font-family: 'Nunito', sans-serif;
-    font-size: 1.6rem;
-    font-weight: 800;
-    color: rgba(9,13,94,0.15);
-    line-height: 1.2;
-    letter-spacing: -0.03em;
-  }
-
-  .step-title {
-    font-size: 0.9rem;
-    font-weight: 700;
-    color: var(--navy);
-    font-family: 'Nunito', sans-serif;
-    margin-bottom: 0.3rem;
-  }
-
-  .step-text {
-    font-size: 0.91rem;
-    line-height: 1.8;
-    color: var(--muted);
-  }
-
-  /* ── FOOTER ── */
-  footer {
-    background: var(--navy);
-    color: var(--white);
-    padding: 3.5rem 3rem;
-    margin-top: 1rem;
-  }
-
-  .footer-inner {
-    max-width: 960px;
-    margin: 0 auto;
-    display: grid;
-    grid-template-columns: 1fr auto;
-    gap: 3rem;
-    align-items: center;
-  }
-
-  .footer-org {
-    font-size: 0.65rem;
-    letter-spacing: 0.22em;
-    text-transform: uppercase;
-    color: rgba(255,255,255,0.35);
-    margin-bottom: 0.75rem;
-    font-weight: 600;
-  }
-
-  .footer-info {
-    font-size: 0.88rem;
-    line-height: 2;
-    color: rgba(255,255,255,0.55);
-  }
-
-  .footer-info a {
-    color: rgba(255,255,255,0.7);
-    text-decoration: none;
-  }
+  /* FOOTER */
+  footer { background: var(--navy); padding: 3.5rem 3rem; }
+  .footer-inner { max-width: 960px; margin: 0 auto; display: grid; grid-template-columns: 1fr auto; gap: 3rem; align-items: center; }
+  .footer-org { font-size: 0.75rem; letter-spacing: 0.2em; text-transform: uppercase; color: var(--green); margin-bottom: 0.75rem; font-weight: 700; }
+  .footer-info { font-size: 0.88rem; line-height: 2; color: rgba(255,255,255,0.5); }
+  .footer-info a { color: rgba(255,255,255,0.65); text-decoration: none; }
   .footer-info a:hover { color: var(--white); }
-
-  .footer-logo img {
-    height: 68px;
-    width: auto;
-    filter: brightness(0) invert(1);
-    opacity: 0.7;
-    display: block;
-  }
-
-  .footer-legal {
-    max-width: 960px;
-    margin: 2rem auto 0;
-    padding-top: 1.5rem;
-    border-top: 1px solid rgba(255,255,255,0.07);
-    font-size: 0.65rem;
-    color: rgba(255,255,255,0.18);
-    letter-spacing: 0.07em;
-    line-height: 2;
-  }
+  .footer-logo img { height: 68px; width: auto; display: block; filter: brightness(0) saturate(100%) invert(84%) sepia(50%) saturate(400%) hue-rotate(60deg) brightness(108%); opacity: 0.85; }
+  .footer-legal { max-width: 960px; margin: 2rem auto 0; padding-top: 1.5rem; border-top: 1px solid rgba(255,255,255,0.07); font-size: 0.65rem; color: var(--green); letter-spacing: 0.07em; line-height: 2; opacity: 0.5; }
 
   @media (max-width: 680px) {
-    header, .section { padding-left: 1.5rem; padding-right: 1.5rem; }
-    .ficha { padding: 0 1.5rem; }
+    .top-bar { padding: 0 1.5rem; }
+    .top-bar-tag { display: none; }
+    .hero, .ficha, .white-section { padding-left: 1.5rem; padding-right: 1.5rem; }
+    .meta-band { padding-left: 1.5rem; padding-right: 1.5rem; }
+    .section, .section-white-inner { padding-left: 1.5rem; padding-right: 1.5rem; }
     .ficha-row, .team-item, .prog-item, .step-item { grid-template-columns: 1fr; gap: 0.3rem; }
     footer { padding: 2.5rem 1.5rem; }
     .footer-inner { grid-template-columns: 1fr; }
     .footer-logo { order: -1; }
-    .header-meta { gap: 1.5rem; }
+    .meta-band { grid-template-columns: 1fr 1fr; }
   }
 </style>
 </head>
 <body>
 
-<!-- HEADER -->
-<header>
-  <p class="header-tag">Apresentação para negociação de espaço e agenda · Casa Firjan</p>
-  <h1 class="header-title">RIOHQ</h1>
-  <p class="header-subtitle">Festival Internacional de Quadrinhos do Rio de Janeiro</p>
-  <div class="header-rule"></div>
-  <div class="header-meta">
-    <div class="meta-item">Data prevista<span class="meta-value">Segunda quinzena de junho de 2027</span></div>
-    <div class="meta-item">Duração<span class="meta-value">5 dias consecutivos</span></div>
-    <div class="meta-item">Público estimado<span class="meta-value">150 mil pessoas</span></div>
-    <div class="meta-item">Financiamento<span class="meta-value">Lei Rouanet</span></div>
+<!-- TOP BAR -->
+<div class="top-bar">
+  <span class="top-bar-brand">RIOHQ</span>
+  <div class="top-bar-dot"></div>
+  <span class="top-bar-sub">Festival Internacional de Quadrinhos do Rio de Janeiro</span>
+  <span class="top-bar-tag">Apresentação para negociação de espaço e agenda</span>
+</div>
+
+<!-- HERO -->
+<div class="hero">
+  <p class="hero-eyebrow">Apresentação para negociação de espaço e agenda</p>
+  <h1 class="hero-title">RIOHQ</h1>
+  <div class="hero-green-rule"></div>
+  <p class="hero-subtitle">Festival Internacional de Quadrinhos do Rio de Janeiro</p>
+</div>
+
+<!-- META CARDS -->
+<div class="meta-band">
+  <div class="meta-card">
+    <div class="meta-card-label">Data prevista</div>
+    <div class="meta-card-value">Segunda quinzena de junho de 2027</div>
   </div>
-</header>
+  <div class="meta-card">
+    <div class="meta-card-label">Duração</div>
+    <div class="meta-card-value">5 dias consecutivos</div>
+  </div>
+  <div class="meta-card">
+    <div class="meta-card-label">Público estimado</div>
+    <div class="meta-card-value">150 mil pessoas</div>
+  </div>
+  <div class="meta-card">
+    <div class="meta-card-label">Instrumento de fomento</div>
+    <div class="meta-card-value">Lei Federal nº 8.313/1991</div>
+  </div>
+</div>
 
 <!-- FICHA -->
 <div class="ficha">
@@ -434,13 +380,16 @@
     <div class="ficha-row"><span class="fl">Natureza</span><span class="fv">Festival bienal dedicado aos quadrinhos como linguagem artística e cultural</span></div>
     <div class="ficha-row"><span class="fl">Data prevista</span><span class="fv">Segunda quinzena de junho de 2027, 5 dias consecutivos</span></div>
     <div class="ficha-row"><span class="fl">Público estimado</span><span class="fv">150 mil pessoas ao longo dos 5 dias de programação</span></div>
-    <div class="ficha-row"><span class="fl">Financiamento</span><span class="fv">Lei Federal de Incentivo à Cultura (Lei Rouanet)</span></div>
+    <div class="ficha-row"><span class="fl">Instrumento de fomento</span><span class="fv">Lei Federal de Incentivo à Cultura (Lei nº 8.313/1991)</span></div>
     <div class="ficha-row"><span class="fl">Produção</span><span class="fv">Azulejo Produção Cultural · CNPJ 27.813.406/0001-40</span></div>
     <div class="ficha-row"><span class="fl">Curadoria</span><span class="fv">Ricky Goodwin · Heitor Pitombo · Octávio Aragão</span></div>
     <div class="ficha-row"><span class="fl">Arquitetura e Cenografia</span><span class="fv">Gilberto Borges</span></div>
     <div class="ficha-row"><span class="fl">Produção Executiva</span><span class="fv">Ida Leal</span></div>
   </div>
 </div>
+
+<!-- WHITE TO PEACH -->
+<div class="peach-divider"></div>
 
 <!-- O FESTIVAL -->
 <div class="section">
@@ -449,52 +398,33 @@
   <p class="lead">O RIOHQ é um festival bienal dedicado à linguagem dos quadrinhos. O evento nasce da necessidade de reinserir o Rio de Janeiro no circuito nacional e internacional dos grandes eventos voltados a esse segmento e tem previsão de realização no segundo semestre de 2027. Voltado a um público amplo e diverso, de leitores, artistas, editores, educadores e fãs de HQs, o evento reunirá palestras, debates, oficinas, exposições, feira de artistas, mostras de animação e atividades educativas. Conta com parcerias institucionais como o Festival Anima Mundi, o Museu da Caricatura Brasileira e a Escola de Comunicação da UFRJ.</p>
 </div>
 
-<!-- EQUIPE -->
-<div class="section">
-  <p class="section-label">Quem faz o RIOHQ</p>
-  <h2>Equipe</h2>
-  <div class="team-list">
-
-    <div class="team-item">
-      <div>
-        <div class="team-role">Curador</div>
-        <div class="team-name">Ricky Goodwin</div>
+<!-- EQUIPE (white background) -->
+<div class="section-white">
+  <div class="section-white-inner">
+    <p class="section-label">Quem faz o RIOHQ</p>
+    <h2>Equipe</h2>
+    <div class="team-list">
+      <div class="team-item">
+        <div><div class="team-role">Curador</div><div class="team-name">Ricky Goodwin</div></div>
+        <div class="team-bio">Jornalista, tradutor, escritor, roteirista e produtor cultural. Responsável, ao lado de Ota Assunção, pela adaptação da revista Mad para o Brasil nos anos 1970. Traduziu Love &amp; Rockets, dos irmãos Hernandez, e centenas de quadrinhos para Vecchi, Rio Gráfica e Record. Atuou na fase áurea de O Pasquim, organizou a Bienal de Quadrinhos do Rio, dirigiu o Instituto Nacional de Artes Gráficas da Funarte e foi roteirista da TV Globo, incluindo Casseta &amp; Planeta.</div>
       </div>
-      <div class="team-bio">Jornalista, tradutor, escritor, roteirista e produtor cultural. Responsável, ao lado de Ota Assunção, pela adaptação da revista Mad para o Brasil nos anos 1970. Traduziu Love &amp; Rockets, dos irmãos Hernandez, e centenas de quadrinhos para Vecchi, Rio Gráfica e Record. Atuou na fase áurea de O Pasquim, organizou a Bienal de Quadrinhos do Rio, dirigiu o Instituto Nacional de Artes Gráficas da Funarte e foi roteirista da TV Globo, incluindo Casseta &amp; Planeta.</div>
-    </div>
-
-    <div class="team-item">
-      <div>
-        <div class="team-role">Curador</div>
-        <div class="team-name">Heitor Pitombo</div>
+      <div class="team-item">
+        <div><div class="team-role">Curador</div><div class="team-name">Heitor Pitombo</div></div>
+        <div class="team-bio">Quadrinista e pesquisador com mais de três décadas de carreira. Escreveu em jornais e publicações especializadas e traduziu HQs para diversas editoras. Integrou a equipe da Bienal Internacional de Quadrinhos do RJ em 1991. Ganhou o HQ Mix em 1997 pelo primeiro CD-ROM sobre quadrinhos produzido no país. Autor de Entes Perpétuos, O Universo Onírico de Neil Gaiman (2010), 300 Mangás (2013) e Quadrinhos do Brasil vol. 1 (2021). No staff da revista Mundo dos Super-Heróis desde 2011 e à frente do Leilão Master de Quadrinhos desde 2016.</div>
       </div>
-      <div class="team-bio">Quadrinista e pesquisador com mais de três décadas de carreira. Escreveu em jornais e publicações especializadas e traduziu HQs para diversas editoras. Integrou a equipe da Bienal Internacional de Quadrinhos do RJ em 1991. Ganhou o HQ Mix em 1997 pelo primeiro CD-ROM sobre quadrinhos produzido no país. Autor de Entes Perpétuos, O Universo Onírico de Neil Gaiman (2010), 300 Mangás (2013) e Quadrinhos do Brasil vol. 1 (2021). No staff da revista Mundo dos Super-Heróis desde 2011 e à frente do Leilão Master de Quadrinhos desde 2016.</div>
-    </div>
-
-    <div class="team-item">
-      <div>
-        <div class="team-role">Curador</div>
-        <div class="team-name">Octávio Aragão</div>
+      <div class="team-item">
+        <div><div class="team-role">Curador</div><div class="team-name">Octávio Aragão</div></div>
+        <div class="team-bio">Designer gráfico, professor e pesquisador. Mestre com pesquisa sobre Angelo Agostini e doutor com tese sobre charge contemporânea. Coordenador do curso de Produção Editorial e professor do PPGMC da ECO-UFRJ. Criador do Prêmio LeBlanc, um dos principais prêmios brasileiros dedicados aos quadrinhos.</div>
       </div>
-      <div class="team-bio">Designer gráfico, professor e pesquisador. Mestre com pesquisa sobre Angelo Agostini e doutor com tese sobre charge contemporânea. Coordenador do curso de Produção Editorial e professor do PPGMC da ECO-UFRJ. Criador do Prêmio LeBlanc, principal premiação brasileira dedicada aos quadrinhos.</div>
-    </div>
-
-    <div class="team-item">
-      <div>
-        <div class="team-role">Arquitetura e Cenografia</div>
-        <div class="team-name">Gilberto Borges</div>
+      <div class="team-item">
+        <div><div class="team-role">Arquitetura e Cenografia</div><div class="team-name">Gilberto Borges</div></div>
+        <div class="team-bio">Profissional premiado em design e eventos especiais no Brasil e na Península Ibérica pelos três últimos anos consecutivos. Membro do Conselho Internacional de Museus (ICOM) e filiado ao Comitê Internacional de Arquitetura e Técnicas Museográficas (ICAMT). Integra ainda os comitês de Belas Artes (ICFA), Gestão de Museus (INTERCOM) e Museus Regionais (ICR).</div>
       </div>
-      <div class="team-bio">Profissional premiado em design e eventos especiais no Brasil e na Península Ibérica pelos três últimos anos consecutivos. Membro do Conselho Internacional de Museus (ICOM) e filiado ao Comitê Internacional de Arquitetura e Técnicas Museográficas (ICAMT). Integra ainda os comitês de Belas Artes (ICFA), Gestão de Museus (INTERCOM) e Museus Regionais (ICR).</div>
-    </div>
-
-    <div class="team-item">
-      <div>
-        <div class="team-role">Produção Executiva</div>
-        <div class="team-name">Ida Leal</div>
+      <div class="team-item">
+        <div><div class="team-role">Produção Executiva</div><div class="team-name">Ida Leal</div></div>
+        <div class="team-bio">Produtora, educadora e gestora cultural, com formação em História da Arte pela UERJ e especialização em Produção Executiva pelo IATEC-RJ. Reúne mais de duas décadas de atuação no ecossistema das artes visuais e da cultura. Com passagens por Anita Schwartz Galeria, Portas Vilaseca e galerias internacionais, fundou a Azulejo Produção Cultural, onde desenvolve projetos para artistas, coletivos e instituições com foco em editais e políticas culturais. Atua como parecerista do Ministério da Cultura nas áreas de Artes Visuais e Museus e Memória.</div>
       </div>
-      <div class="team-bio">Produtora, educadora e gestora cultural, com formação em História da Arte pela UERJ e especialização em Produção Executiva pelo IATEC-RJ. Reúne mais de duas décadas de atuação no ecossistema das artes visuais e da cultura. Com passagens por Anita Schwartz Galeria, Portas Vilaseca e galerias internacionais, fundou a Azulejo Produção Cultural, onde desenvolve projetos para artistas, coletivos e instituições com foco em editais e políticas culturais. Atua como parecerista do Ministério da Cultura nas áreas de Artes Visuais e Museus e Memória.</div>
     </div>
-
   </div>
 </div>
 
@@ -503,58 +433,37 @@
   <p class="section-label">Programação prevista</p>
   <h2>Cinco dias de programação contínua e diversificada</h2>
   <div class="prog-list">
-    <div class="prog-item">
-      <div class="prog-title">Painéis e palestras</div>
-      <div class="prog-text">10 painéis de debate temático e palestras especiais com artistas nacionais e cerca de 15 autores internacionais, consagrados e emergentes.</div>
-    </div>
-    <div class="prog-item">
-      <div class="prog-title">Mostra de cinema e animação</div>
-      <div class="prog-text">Curadoria especializada em parceria com o Festival Anima Mundi, com exibição de curtas-metragens e obras de animação.</div>
-    </div>
-    <div class="prog-item">
-      <div class="prog-title">Exposições</div>
-      <div class="prog-text">Três exposições simultâneas: acervo de originais de Ricardo Leite, mostra coletiva com artistas convidados e a exposição Rio, Capital do Traço, com acervo do Museu da Caricatura Brasileira.</div>
-    </div>
-    <div class="prog-item">
-      <div class="prog-title">Mesas de artistas</div>
-      <div class="prog-text">150 mesas de quadrinistas selecionados por convocatória pública, incluindo mesas gratuitas para artistas independentes.</div>
-    </div>
-    <div class="prog-item">
-      <div class="prog-title">Oficinas de formação</div>
-      <div class="prog-text">Mínimo de 2 oficinas por dia, voltadas a crianças, estudantes, jovens artistas e educadores.</div>
-    </div>
-    <div class="prog-item">
-      <div class="prog-title">Área expositiva editorial</div>
-      <div class="prog-text">Estandes de editoras e coletivos, com participação de Veneta, Panini, Companhia das Letras, Pipoca e Nanquim, JBC e Darkside, entre outras.</div>
-    </div>
-    <div class="prog-item">
-      <div class="prog-title">Ações educativas</div>
-      <div class="prog-text">Núcleos pedagógicos vinculados à ECO-UFRJ, EBA-UFRJ e Capa Comics, com atividades contínuas ao longo dos 5 dias.</div>
-    </div>
+    <div class="prog-item"><div class="prog-title">Painéis e palestras</div><div class="prog-text">10 painéis de debate temático e palestras especiais com artistas nacionais e cerca de 15 autores internacionais, consagrados e emergentes.</div></div>
+    <div class="prog-item"><div class="prog-title">Mostra de cinema e animação</div><div class="prog-text">Curadoria especializada em parceria com o Festival Anima Mundi, com exibição de curtas-metragens e obras de animação.</div></div>
+    <div class="prog-item"><div class="prog-title">Exposições</div><div class="prog-text">Três exposições simultâneas: acervo de originais de Ricardo Leite, mostra coletiva com artistas convidados e a exposição Rio, Capital do Traço, com acervo do Museu da Caricatura Brasileira.</div></div>
+    <div class="prog-item"><div class="prog-title">Mesas de artistas</div><div class="prog-text">150 mesas de quadrinistas selecionados por convocatória pública, incluindo mesas gratuitas para artistas independentes.</div></div>
+    <div class="prog-item"><div class="prog-title">Oficinas de formação</div><div class="prog-text">Mínimo de 2 oficinas por dia, voltadas a crianças, estudantes, jovens artistas e educadores.</div></div>
+    <div class="prog-item"><div class="prog-title">Área expositiva editorial</div><div class="prog-text">Estandes de editoras e coletivos, com participação de Veneta, Panini, Companhia das Letras, Pipoca e Nanquim, JBC e Darkside, entre outras.</div></div>
+    <div class="prog-item"><div class="prog-title">Ações educativas</div><div class="prog-text">Núcleos pedagógicos vinculados à ECO-UFRJ, EBA-UFRJ e Capa Comics, com atividades contínuas ao longo dos 5 dias.</div></div>
   </div>
 </div>
 
-<!-- ESPAÇOS -->
-<div class="section">
-  <p class="section-label">Infraestrutura requerida</p>
-  <h2>Necessidades de espaço para 5 dias de programação simultânea</h2>
-  <p class="lead">O RIOHQ requer um espaço com capacidade para abrigar múltiplas frentes de programação em paralelo ao longo de 5 dias consecutivos.</p>
-  <table class="spaces-table">
-    <thead>
-      <tr><th>Espaço</th><th>Finalidade</th></tr>
-    </thead>
-    <tbody>
-      <tr><td>Auditório principal</td><td>Palestras, painéis e abertura oficial. Espaços menores podem ser complementados com transmissão via telão.</td></tr>
-      <tr><td>Sala menor / auditório secundário</td><td>Debates especializados, apresentações acadêmicas e portfólios</td></tr>
-      <tr><td>Sala de cinema / projeção</td><td>Mostra de animação em parceria com o Festival Anima Mundi</td></tr>
-      <tr><td>Área para mesas de artistas</td><td>150 mesas (mínimo 1.500 m² de área útil)</td></tr>
-      <tr><td>Área expositiva editorial</td><td>Estandes de editoras e coletivos</td></tr>
-      <tr><td>Salas de oficinas</td><td>Mínimo 2 salas para atividades formativas em paralelo</td></tr>
-      <tr><td>Espaço para exposições</td><td>Três exposições simultâneas com iluminação adequada</td></tr>
-      <tr><td>Sala de imprensa</td><td>Atendimento a veículos credenciados</td></tr>
-      <tr><td>Apoio logístico</td><td>Sala de produção, coordenação e depósito</td></tr>
-    </tbody>
-  </table>
+<!-- ESPAÇOS (white) -->
+<div class="section-white">
+  <div class="section-white-inner">
+    <p class="section-label">Infraestrutura requerida</p>
+    <h2>Necessidades de espaço para 5 dias de programação simultânea</h2>
+    <p class="lead">O RIOHQ requer um espaço com capacidade para abrigar múltiplas frentes de programação em paralelo ao longo de 5 dias consecutivos.</p>
+    <table class="spaces-table">
+      <thead><tr><th>Espaço</th><th>Finalidade</th></tr></thead>
+      <tbody>
+        <tr><td>Auditório principal</td><td>Palestras, painéis e abertura oficial. Espaços menores podem ser complementados com transmissão via telão.</td></tr>
+        <tr><td>Sala menor / auditório secundário</td><td>Debates especializados, apresentações acadêmicas e portfólios</td></tr>
+        <tr><td>Sala de cinema / projeção</td><td>Mostra de animação em parceria com o Festival Anima Mundi</td></tr>
+        <tr><td>Área para mesas de artistas</td><td>150 mesas (mínimo 1.500 m² de área útil)</td></tr>
+        <tr><td>Área expositiva editorial</td><td>Estandes de editoras e coletivos</td></tr>
+        <tr><td>Salas de oficinas</td><td>Mínimo 2 salas para atividades formativas em paralelo</td></tr>
+        <tr><td>Espaço para exposições</td><td>Três exposições simultâneas com iluminação adequada</td></tr>
+        <tr><td>Sala de imprensa</td><td>Atendimento a veículos credenciados</td></tr>
+        <tr><td>Apoio logístico</td><td>Sala de produção, coordenação e depósito</td></tr>
+      </tbody>
+    </table>
+  </div>
 </div>
 
 <!-- PARCERIAS -->
@@ -570,17 +479,19 @@
   </ul>
 </div>
 
-<!-- CONTRAPARTIDAS -->
-<div class="section">
-  <p class="section-label">Contrapartidas e impacto social</p>
-  <h2>Acesso democrático e inclusão como princípios do festival</h2>
-  <ul class="bullets">
-    <li>Curadoria comprometida com diversidade de gênero e representatividade regional, com presença de artistas do Sul Global</li>
-    <li>Entrada solidária mediante doação de uma revista em quadrinhos, com meta de arrecadar até 20 mil exemplares para bibliotecas públicas e escolas</li>
-    <li>Atividades educativas gratuitas para estudantes e professores da rede pública</li>
-    <li>Mesas gratuitas para artistas independentes e quadrinistas da cena emergente</li>
-    <li>Acessibilidade integral: intérpretes de LIBRAS, audiodescrição e materiais em formatos acessíveis em todas as atividades principais</li>
-  </ul>
+<!-- CONTRAPARTIDAS (white) -->
+<div class="section-white">
+  <div class="section-white-inner">
+    <p class="section-label">Contrapartidas e impacto social</p>
+    <h2>Acesso democrático e inclusão como princípios do festival</h2>
+    <ul class="bullets">
+      <li>Curadoria comprometida com diversidade de gênero e representatividade regional, com presença de artistas do Sul Global</li>
+      <li>Entrada solidária mediante doação de uma revista em quadrinhos, com meta de arrecadar até 20 mil exemplares para bibliotecas públicas e escolas</li>
+      <li>Atividades educativas gratuitas para estudantes e professores da rede pública</li>
+      <li>Mesas gratuitas para artistas independentes e quadrinistas da cena emergente</li>
+      <li>Acessibilidade integral: intérpretes de LIBRAS, audiodescrição e materiais em formatos acessíveis em todas as atividades principais</li>
+    </ul>
+  </div>
 </div>
 
 <!-- NEGOCIAÇÃO -->
@@ -588,41 +499,11 @@
   <p class="section-label">Agenda de negociação</p>
   <h2>Pontos para definição</h2>
   <div class="steps-list">
-    <div class="step-item">
-      <div class="step-n">01</div>
-      <div>
-        <div class="step-title">Disponibilidade</div>
-        <div class="step-text">Verificação da agenda para a segunda quinzena de junho de 2027, 5 dias consecutivos.</div>
-      </div>
-    </div>
-    <div class="step-item">
-      <div class="step-n">02</div>
-      <div>
-        <div class="step-title">Espaços</div>
-        <div class="step-text">Levantamento dos espaços disponíveis, capacidades e condições técnicas.</div>
-      </div>
-    </div>
-    <div class="step-item">
-      <div class="step-n">03</div>
-      <div>
-        <div class="step-title">Parceria</div>
-        <div class="step-text">Definição das condições de parceria, contrapartidas institucionais e modelo de cessão.</div>
-      </div>
-    </div>
-    <div class="step-item">
-      <div class="step-n">04</div>
-      <div>
-        <div class="step-title">Visita técnica</div>
-        <div class="step-text">Cronograma para visita técnica de avaliação dos espaços pela equipe de produção.</div>
-      </div>
-    </div>
-    <div class="step-item">
-      <div class="step-n">05</div>
-      <div>
-        <div class="step-title">Carta de Anuência</div>
-        <div class="step-text">Emissão de Carta de Anuência para fins de captação de recursos junto à Lei Rouanet.</div>
-      </div>
-    </div>
+    <div class="step-item"><div class="step-n">01</div><div><div class="step-title">Disponibilidade</div><div class="step-text">Verificação da agenda para a segunda quinzena de junho de 2027, 5 dias consecutivos.</div></div></div>
+    <div class="step-item"><div class="step-n">02</div><div><div class="step-title">Espaços</div><div class="step-text">Levantamento dos espaços disponíveis, capacidades e condições técnicas.</div></div></div>
+    <div class="step-item"><div class="step-n">03</div><div><div class="step-title">Parceria</div><div class="step-text">Definição das condições de parceria, contrapartidas institucionais e modelo de cessão.</div></div></div>
+    <div class="step-item"><div class="step-n">04</div><div><div class="step-title">Visita técnica</div><div class="step-text">Cronograma para visita técnica de avaliação dos espaços pela equipe de produção.</div></div></div>
+    <div class="step-item"><div class="step-n">05</div><div><div class="step-title">Carta de Anuência</div><div class="step-text">Emissão de Carta de Anuência para fins de enquadramento junto à Lei Federal nº 8.313/1991.</div></div></div>
   </div>
 </div>
 
@@ -644,7 +525,7 @@
   </div>
   <div class="footer-legal">
     Material preliminar de apresentação para fins de negociação de espaço e agenda.<br>
-    RIOHQ — Festival Internacional de Quadrinhos do Rio de Janeiro · Financiamento: Lei Federal de Incentivo à Cultura (Lei Rouanet)
+    RIOHQ — Festival Internacional de Quadrinhos do Rio de Janeiro · Lei Federal de Incentivo à Cultura nº 8.313/1991
   </div>
 </footer>
 
